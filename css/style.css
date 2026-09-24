@@ -323,6 +323,50 @@ h3 {
   font-weight: 700;
 }
 
+.modal-film {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-film-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin: 15vh auto 0;
+  padding: 1.5rem;
+  background-color: #221f1f;
+  border: 1px solid #2c2c34;
+  border-radius: 6px;
+  color: #ffffff;
+}
+.modal-film-content h2 {
+  margin-bottom: 1rem;
+  padding-right: 2.5rem;
+}
+.modal-film-content p {
+  color: #999999;
+  font-size: 14px;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.close:hover {
+  color: #e50914;
+}
+
 .navbar-streamflix {
   --bs-navbar-color: #ffffff;
   --bs-navbar-hover-color: #999999;

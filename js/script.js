@@ -65,3 +65,47 @@ champRecherche.addEventListener('input', function () {
 formulaireRecherche.addEventListener('submit', (event) => {
   event.preventDefault();
 });
+
+// Exercice 5 : modal de fiche film
+
+const modal = document.querySelector('#modal');
+const modalBody = document.querySelector('#modal-body');
+
+function openModal(film) {
+  const titre = film.querySelector('h3').textContent;
+  const meta = film.querySelector('.card-meta').textContent.replace(/\s+/g, ' ').trim();
+  const note = film.querySelector('.card-note').textContent;
+  const genres = [...film.querySelectorAll('.badge-genre')].map((b) => b.textContent);
+
+  modalBody.replaceChildren();
+  const h2 = document.createElement('h2');
+  h2.textContent = titre;
+  const infos = document.createElement('p');
+  infos.textContent = `${meta} · ${note}`;
+  const listeGenres = document.createElement('p');
+  listeGenres.textContent = genres.join(', ');
+
+  modalBody.append(h2, infos, listeGenres);
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+films.forEach((film) => {
+  film.querySelector('a.btn').addEventListener('click', (event) => {
+    event.preventDefault();
+    openModal(film);
+  });
+});
+
+modal.querySelector('.close').addEventListener('click', closeModal);
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeModal();
+});
