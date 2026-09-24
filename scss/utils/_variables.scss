@@ -1,0 +1,47 @@
+// =============================================================================
+// Variables - charte graphique StreamFlix
+// =============================================================================
+
+@use "sass:string";
+
+// Couleurs de marque
+$primary-red: #e50914;
+$primary-red-light: #f6121d;
+$primary-dark: #221f1f;
+$secondary-gray: #564d4d;
+$text-light: #ffffff;
+$text-muted: #999999;
+$accent-blue: #0071eb;
+
+// Couleurs d'interface
+$background-dark: #0b0b0f;
+$border-color: #2c2c34;
+$success-green: #2ea043;
+
+// Typographie
+$font-primary: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-secondary: Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-small: 14px;
+$font-weight-bold: 700;
+
+// Espacements
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2.5rem;
+
+// Divers
+$border-radius-base: 6px;
+$transition-base: 200ms ease;
+$poster-ratio: string.unquote("2 / 3");
+$hero-min-height: 70vh;
+
+// Points de rupture alignes sur ceux de Bootstrap 5
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);

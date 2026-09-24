@@ -1,0 +1,85 @@
+// =============================================================================
+// Personnalisation de Bootstrap 5
+// Bootstrap est charge via CDN : ses variables sont donc surchargees par ses
+// proprietes personnalisees CSS, qui sont la surface de personnalisation
+// officielle de Bootstrap 5.3.
+// =============================================================================
+
+@use "../utils/variables" as v;
+
+:root {
+  // Palette
+  --bs-primary: #{v.$primary-red};
+  --bs-primary-rgb: 229, 9, 20;
+  --bs-secondary: #{v.$secondary-gray};
+  --bs-secondary-rgb: 86, 77, 77;
+  --bs-info: #{v.$accent-blue};
+  --bs-info-rgb: 0, 113, 235;
+
+  // Fond et texte
+  --bs-body-bg: #{v.$background-dark};
+  --bs-body-color: #{v.$text-light};
+  --bs-secondary-color: #{v.$text-muted};
+  --bs-border-color: #{v.$border-color};
+  --bs-emphasis-color: #{v.$text-light};
+
+  // Typographie
+  --bs-body-font-family: #{v.$font-primary};
+  --bs-body-font-size: #{v.$font-size-base};
+  --bs-body-line-height: 1.6;
+
+  // Formes
+  --bs-border-radius: #{v.$border-radius-base};
+  --bs-link-color: #{v.$text-light};
+  --bs-link-hover-color: #{v.$primary-red};
+}
+
+// Les composants Bootstrap qui s'appuient sur --bs-primary sans passer par une
+// propriete personnalisee sont realignes ici sur la charte StreamFlix.
+.btn-primary {
+  --bs-btn-bg: #{v.$primary-red};
+  --bs-btn-border-color: #{v.$primary-red};
+  --bs-btn-hover-bg: #{v.$primary-red-light};
+  --bs-btn-hover-border-color: #{v.$primary-red-light};
+  --bs-btn-active-bg: #{v.$primary-red-light};
+  --bs-btn-active-border-color: #{v.$primary-red-light};
+  --bs-btn-color: #{v.$text-light};
+  --bs-btn-hover-color: #{v.$text-light};
+}
+
+.btn-secondary {
+  --bs-btn-bg: #{v.$secondary-gray};
+  --bs-btn-border-color: #{v.$secondary-gray};
+  --bs-btn-hover-bg: #{v.$text-muted};
+  --bs-btn-hover-border-color: #{v.$text-muted};
+}
+
+.form-control,
+.form-select {
+  --bs-body-bg: #{v.$primary-dark};
+
+  background-color: v.$primary-dark;
+  border-color: v.$border-color;
+  color: v.$text-light;
+
+  &::placeholder {
+    color: v.$text-muted;
+  }
+
+  &:focus {
+    background-color: v.$primary-dark;
+    border-color: v.$primary-red;
+    box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+    color: v.$text-light;
+  }
+}
+
+.form-check-input:checked {
+  background-color: v.$primary-red;
+  border-color: v.$primary-red;
+}
+
+.modal-content {
+  background-color: v.$primary-dark;
+  border: 1px solid v.$border-color;
+}

@@ -1,50 +1,69 @@
-/* ==========================================================================
-   StreamFlix - Feuille de styles principale (CSS natif)
-   1.  Variables
-   2.  Reset
-   3.  Accessibilite
-   4.  Typographie
-   5.  Boutons
-   6.  Header / navigation
-   7.  Hero
-   8.  Grilles de films
-   9.  Formulaire d'inscription
-   10. Footer
-   11. Responsive
-   ========================================================================== */
-
-/* 1. Variables
-   ========================================================================== */
-
 :root {
-  --couleur-rouge: #e50914;
-  --couleur-rouge-clair: #f6121d;
-  --couleur-fond: #0b0b0f;
-  --couleur-surface: #221f1f;
-  --couleur-surface-claire: #564d4d;
-  --couleur-texte: #ffffff;
-  --couleur-texte-attenue: #999999;
-  --couleur-bordure: #2c2c34;
-  --couleur-focus: #0071eb;
-
-  --police-principale: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --taille-base: 1rem;
-  --taille-petite: 0.875rem;
-  --taille-grande: 1.5rem;
-
-  --espace-xs: 0.5rem;
-  --espace-sm: 1rem;
-  --espace-md: 1.5rem;
-  --espace-lg: 2.5rem;
-  --espace-xl: 4rem;
-
-  --rayon: 6px;
-  --transition: 200ms ease;
-  --largeur-max: 1400px;
+  --bs-primary: #e50914;
+  --bs-primary-rgb: 229, 9, 20;
+  --bs-secondary: #564d4d;
+  --bs-secondary-rgb: 86, 77, 77;
+  --bs-info: #0071eb;
+  --bs-info-rgb: 0, 113, 235;
+  --bs-body-bg: #0b0b0f;
+  --bs-body-color: #ffffff;
+  --bs-secondary-color: #999999;
+  --bs-border-color: #2c2c34;
+  --bs-emphasis-color: #ffffff;
+  --bs-body-font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 16px;
+  --bs-body-line-height: 1.6;
+  --bs-border-radius: 6px;
+  --bs-link-color: #ffffff;
+  --bs-link-hover-color: #e50914;
 }
 
-/* 2. Reset
-   ========================================================================== */
+.btn-primary {
+  --bs-btn-bg: #e50914;
+  --bs-btn-border-color: #e50914;
+  --bs-btn-hover-bg: #f6121d;
+  --bs-btn-hover-border-color: #f6121d;
+  --bs-btn-active-bg: #f6121d;
+  --bs-btn-active-border-color: #f6121d;
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.btn-secondary {
+  --bs-btn-bg: #564d4d;
+  --bs-btn-border-color: #564d4d;
+  --bs-btn-hover-bg: #999999;
+  --bs-btn-hover-border-color: #999999;
+}
+
+.form-control,
+.form-select {
+  --bs-body-bg: #221f1f;
+  background-color: #221f1f;
+  border-color: #2c2c34;
+  color: #ffffff;
+}
+.form-control::placeholder,
+.form-select::placeholder {
+  color: #999999;
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: #221f1f;
+  border-color: #e50914;
+  box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+  color: #ffffff;
+}
+
+.form-check-input:checked {
+  background-color: #e50914;
+  border-color: #e50914;
+}
+
+.modal-content {
+  background-color: #221f1f;
+  border: 1px solid #2c2c34;
+}
 
 *,
 *::before,
@@ -52,57 +71,16 @@
   box-sizing: border-box;
 }
 
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-figure,
-fieldset,
-legend {
-  margin: 0;
-  padding: 0;
-}
-
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-button,
-input {
-  font: inherit;
-  color: inherit;
-}
-
-/* 3. Accessibilite
-   ========================================================================== */
-
-.lien-evitement {
-  position: absolute;
-  top: -100%;
-  left: var(--espace-sm);
-  z-index: 100;
-  padding: var(--espace-xs) var(--espace-sm);
-  background-color: var(--couleur-rouge);
-  color: var(--couleur-texte);
-  border-radius: var(--rayon);
-  text-decoration: none;
-}
-
-.lien-evitement:focus {
-  top: var(--espace-sm);
-}
-
-:focus-visible {
-  outline: 3px solid var(--couleur-focus);
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -113,28 +91,28 @@ input {
     transition-duration: 0.01ms !important;
   }
 }
-
-/* 4. Typographie
-   ========================================================================== */
-
 body {
-  background-color: var(--couleur-fond);
-  color: var(--couleur-texte);
-  font-family: var(--police-principale);
-  font-size: var(--taille-base);
-  line-height: 1.6;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.2;
   font-weight: 700;
+  line-height: 1.2;
 }
 
-a {
-  color: inherit;
-  transition: color var(--transition);
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.text-small {
+  font-size: 14px;
 }
 
 .titre-site {
@@ -148,151 +126,48 @@ a {
   white-space: nowrap;
 }
 
-/* 5. Boutons
-   ========================================================================== */
-
-.bouton {
-  display: inline-block;
-  padding: var(--espace-xs) var(--espace-md);
-  background-color: var(--couleur-surface-claire);
-  color: var(--couleur-texte);
-  border: none;
-  border-radius: var(--rayon);
-  font-size: var(--taille-petite);
-  font-weight: 700;
-  text-align: center;
+.lien-evitement {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1080;
+  padding: 0.5rem 1rem;
+  background-color: #e50914;
+  border-radius: 6px;
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
-  transition: background-color var(--transition), transform var(--transition);
+}
+.lien-evitement:focus {
+  top: 1rem;
 }
 
-.bouton:hover {
-  background-color: var(--couleur-texte-attenue);
-  transform: translateY(-2px);
+:focus-visible {
+  outline: 3px solid #0071eb;
+  outline-offset: 2px;
 }
-
-.bouton-principal {
-  background-color: var(--couleur-rouge);
-}
-
-.bouton-principal:hover {
-  background-color: var(--couleur-rouge-clair);
-}
-
-/* 6. Header / navigation
-   ========================================================================== */
 
 .entete {
   position: sticky;
   top: 0;
-  z-index: 50;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--espace-md);
-  padding: var(--espace-sm) var(--espace-md);
-  background-color: rgba(11, 11, 15, 0.95);
-  border-bottom: 1px solid var(--couleur-bordure);
+  z-index: 1030;
 }
-
-.logo {
-  font-size: var(--taille-grande);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  text-decoration: none;
-  text-transform: uppercase;
+@media (min-width: 992px) {
+  .entete .recherche .form-control {
+    min-width: 14rem;
+  }
 }
-
-.logo span {
-  color: var(--couleur-rouge);
-}
-
-.entete nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espace-md);
-}
-
-.entete nav a {
-  position: relative;
-  font-size: var(--taille-petite);
-  text-decoration: none;
-}
-
-.entete nav a:hover {
-  color: var(--couleur-texte-attenue);
-}
-
-.entete nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6px;
-  height: 2px;
-  background-color: var(--couleur-rouge);
-}
-
-.zone-utilisateur {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--espace-md);
-  margin-left: auto;
-}
-
-.recherche {
-  display: flex;
-  gap: var(--espace-xs);
-}
-
-.recherche label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.recherche input {
-  min-width: 14rem;
-  padding: var(--espace-xs) var(--espace-sm);
-  background-color: var(--couleur-surface);
-  border: 1px solid var(--couleur-bordure);
-  border-radius: var(--rayon);
-  font-size: var(--taille-petite);
-}
-
-.recherche input::placeholder {
-  color: var(--couleur-texte-attenue);
-}
-
-.recherche button {
-  padding: var(--espace-xs) var(--espace-sm);
-  background-color: var(--couleur-rouge);
-  border: none;
-  border-radius: var(--rayon);
-  font-size: var(--taille-petite);
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color var(--transition);
-}
-
-.recherche button:hover {
-  background-color: var(--couleur-rouge-clair);
-}
-
-/* 7. Hero
-   ========================================================================== */
 
 .hero {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 70vh;
+  min-height: 55vh;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .hero {
+    min-height: 70vh;
+  }
 }
 
 .hero-image {
@@ -306,271 +181,213 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    var(--couleur-fond) 0%,
-    rgba(11, 11, 15, 0.6) 50%,
-    rgba(11, 11, 15, 0.2) 100%
-  );
+  background: linear-gradient(to top, #0b0b0f 0%, rgba(11, 11, 15, 0.7) 50%, rgba(11, 11, 15, 0.25) 100%);
 }
 
 .hero-contenu {
   position: relative;
   max-width: 40rem;
-  padding: var(--espace-lg) var(--espace-md);
 }
-
 .hero-contenu h2 {
   font-size: clamp(2rem, 6vw, 3.5rem);
   text-transform: uppercase;
 }
 
 .hero-meta {
-  margin-top: var(--espace-xs);
-  color: var(--couleur-texte-attenue);
-  font-size: var(--taille-petite);
+  color: #999999;
+  font-size: 14px;
 }
 
-.hero-description {
-  margin-top: var(--espace-sm);
+.pied {
+  border-top: 1px solid #2c2c34;
+  color: #999999;
+  font-size: 14px;
+}
+.pied h2 {
+  color: #ffffff;
+  font-size: 16px;
+}
+.pied a {
+  color: inherit;
+  text-decoration: none;
+}
+.pied a:hover, .pied a:focus-visible {
+  color: #ffffff;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espace-xs);
-  margin-top: var(--espace-md);
+.copyright {
+  border-top: 1px solid #2c2c34;
 }
 
-/* 8. Grilles de films
-   ========================================================================== */
-
-.rangee {
-  max-width: var(--largeur-max);
-  margin: 0 auto;
-  padding: var(--espace-lg) var(--espace-md);
+.btn-streamflix {
+  background-color: #e50914;
+  border-color: #e50914;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+.btn-streamflix:hover, .btn-streamflix:focus-visible, .btn-streamflix:active {
+  background-color: #f6121d;
+  border-color: #f6121d;
+  color: #ffffff;
+}
+.btn-streamflix {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-streamflix:hover, .btn-streamflix:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-.rangee > h2 {
-  margin-bottom: var(--espace-md);
-  font-size: var(--taille-grande);
+.btn-streamflix-ghost {
+  background-color: #564d4d;
+  border-color: #564d4d;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+.btn-streamflix-ghost:hover, .btn-streamflix-ghost:focus-visible, .btn-streamflix-ghost:active {
+  background-color: #999999;
+  border-color: #999999;
+  color: #ffffff;
+}
+.btn-streamflix-ghost {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-streamflix-ghost:hover, .btn-streamflix-ghost:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-.grille-films {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--espace-md);
+.btn {
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.film {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background-color: var(--couleur-surface);
-  border-radius: var(--rayon);
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+.card-film {
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
-
-.film:hover {
+.card-film:hover, .card-film:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
-
-.film img {
+.card-film {
+  height: 100%;
+  background-color: #221f1f;
+  border: 1px solid #2c2c34;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.card-film .card-img-top {
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
 }
-
-.film h3 {
-  margin: var(--espace-sm) var(--espace-sm) 0;
-  font-size: var(--taille-base);
+.card-film .card-title {
+  font-size: 16px;
 }
-
-.film .meta,
-.film .note,
-.film .genres {
-  margin: 0 var(--espace-sm);
-  color: var(--couleur-texte-attenue);
-  font-size: var(--taille-petite);
+.card-film .card-meta {
+  color: #999999;
+  font-size: 14px;
 }
-
-.film .note {
-  color: var(--couleur-rouge);
+.card-film .card-note {
+  color: #e50914;
+  font-size: 14px;
+  font-weight: 700;
+}
+.card-film .badge-genre {
+  background-color: #564d4d;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
-.film .bouton {
-  margin: var(--espace-sm);
-  margin-top: auto;
+.navbar-streamflix {
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #999999;
+  --bs-navbar-active-color: #ffffff;
+  --bs-navbar-brand-color: #ffffff;
+  --bs-navbar-brand-hover-color: #ffffff;
+  --bs-navbar-toggler-border-color: #2c2c34;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-color: rgba(11, 11, 15, 0.95);
+  border-bottom: 1px solid #2c2c34;
+}
+.navbar-streamflix .navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.navbar-streamflix .navbar-brand span {
+  color: #e50914;
+}
+.navbar-streamflix .nav-link {
+  position: relative;
+  color: #ffffff;
+  font-size: 14px;
+}
+.navbar-streamflix .nav-link:hover, .navbar-streamflix .nav-link:focus-visible {
+  color: #999999;
+}
+.navbar-streamflix .nav-link.active {
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .navbar-streamflix .nav-link.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    background-color: #e50914;
+  }
+}
+.navbar-streamflix .navbar-toggler {
+  border-color: #2c2c34;
+}
+.navbar-streamflix .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
 }
 
-/* 9. Formulaire d'inscription
-   ========================================================================== */
+.recherche-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rangee h2 {
+  margin-bottom: 1.5rem;
+}
 
 .inscription {
   max-width: 40rem;
-  margin: 0 auto;
-  padding: var(--espace-lg) var(--espace-md) var(--espace-xl);
 }
-
-.inscription h2 {
-  margin-bottom: var(--espace-md);
-  font-size: var(--taille-grande);
-}
-
 .inscription fieldset {
-  margin-bottom: var(--espace-md);
-  padding: var(--espace-md);
-  border: 1px solid var(--couleur-bordure);
-  border-radius: var(--rayon);
+  border: 1px solid #2c2c34;
+  border-radius: 6px;
 }
-
 .inscription legend {
-  padding: 0 var(--espace-xs);
+  float: none;
+  width: auto;
+  padding: 0 0.5rem;
+  font-size: 16px;
   font-weight: 700;
 }
-
-.champ {
-  margin-bottom: var(--espace-sm);
+.inscription .form-control:user-invalid {
+  border-color: #e50914;
 }
-
-.champ label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: var(--taille-petite);
-}
-
-.champ input[type="text"],
-.champ input[type="email"],
-.champ input[type="password"],
-.champ input[type="date"] {
-  width: 100%;
-  padding: var(--espace-xs) var(--espace-sm);
-  background-color: var(--couleur-surface);
-  border: 1px solid var(--couleur-bordure);
-  border-radius: var(--rayon);
-}
-
-.champ input:user-invalid {
-  border-color: var(--couleur-rouge);
-}
-
-.champ input:user-valid {
+.inscription .form-control:user-valid {
   border-color: #2ea043;
 }
-
-.aide {
-  display: block;
-  margin-top: 0.25rem;
-  color: var(--couleur-texte-attenue);
-  font-size: var(--taille-petite);
+.inscription .aide {
+  color: #999999;
+  font-size: 14px;
 }
 
-.inscription fieldset label input[type="radio"] {
-  margin-right: var(--espace-xs);
-}
-
-.inscription fieldset > label {
-  display: block;
-  margin-bottom: var(--espace-xs);
-}
-
-.champ input[type="checkbox"] {
-  margin-right: var(--espace-xs);
-}
-
-.champ input[type="checkbox"] + label {
-  display: inline;
-}
-
-.inscription button[type="submit"] {
-  width: 100%;
-  padding: var(--espace-xs) var(--espace-md);
-  background-color: var(--couleur-rouge);
-  border: none;
-  border-radius: var(--rayon);
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color var(--transition);
-}
-
-.inscription button[type="submit"]:hover {
-  background-color: var(--couleur-rouge-clair);
-}
-
-/* 10. Footer
-   ========================================================================== */
-
-.pied {
-  display: grid;
-  gap: var(--espace-md);
-  max-width: var(--largeur-max);
-  margin: 0 auto;
-  padding: var(--espace-lg) var(--espace-md);
-  border-top: 1px solid var(--couleur-bordure);
-  color: var(--couleur-texte-attenue);
-  font-size: var(--taille-petite);
-}
-
-.pied h2 {
-  margin-bottom: var(--espace-xs);
-  color: var(--couleur-texte);
-  font-size: var(--taille-base);
-}
-
-.pied a {
-  text-decoration: none;
-}
-
-.pied a:hover {
-  color: var(--couleur-texte);
-}
-
-.pied li + li {
-  margin-top: 0.25rem;
-}
-
-.copyright {
-  grid-column: 1 / -1;
-  padding-top: var(--espace-sm);
-  border-top: 1px solid var(--couleur-bordure);
-}
-
-/* 11. Responsive
-   ========================================================================== */
-
-@media (min-width: 48em) {
-  .entete {
-    padding: var(--espace-sm) var(--espace-lg);
-  }
-
-  .rangee,
-  .pied {
-    padding-left: var(--espace-lg);
-    padding-right: var(--espace-lg);
-  }
-
-  .hero-contenu {
-    padding: var(--espace-xl) var(--espace-lg);
-  }
-
-  .grille-films {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .pied {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 64em) {
-  .grille-films {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-
-  .pied {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+/*# sourceMappingURL=style.css.map */

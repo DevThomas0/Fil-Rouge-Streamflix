@@ -1,0 +1,21 @@
+// =============================================================================
+// Boutons - surcouche StreamFlix des composants .btn de Bootstrap
+// =============================================================================
+
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.btn-streamflix {
+  @include m.button-filled(v.$primary-red, v.$primary-red-light);
+  @include m.hover-lift(2px, none);
+}
+
+.btn-streamflix-ghost {
+  @include m.button-filled(v.$secondary-gray, v.$text-muted);
+  @include m.hover-lift(2px, none);
+}
+
+.btn {
+  font-size: v.$font-size-small;
+  font-weight: v.$font-weight-bold;
+}

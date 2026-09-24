@@ -1,0 +1,19 @@
+{
+  "name": "streamflix",
+  "version": "1.0.0",
+  "description": "Plateforme de streaming StreamFlix - projet fil rouge (Bootstrap 5 + SASS)",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/style.scss css/style.css --style=expanded --source-map",
+    "sass:watch": "sass --watch scss/style.scss css/style.css --style=expanded --source-map",
+    "build": "sass scss/style.scss css/style.css --style=compressed --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevThomas0/Fil-Rouge-Streamflix.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}

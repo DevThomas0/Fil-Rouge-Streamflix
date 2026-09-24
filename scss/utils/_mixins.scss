@@ -1,0 +1,59 @@
+// =============================================================================
+// Mixins reutilisables
+// =============================================================================
+
+@use "sass:map";
+@use "variables" as v;
+
+// Media query a partir des points de rupture Bootstrap
+@mixin respond-to($breakpoint) {
+  $value: map.get(v.$breakpoints, $breakpoint);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Point de rupture inconnu : #{$breakpoint}.";
+  }
+}
+
+// Effet de survol commun aux cartes et aux boutons
+@mixin hover-lift($distance: 4px, $shadow: 0 12px 24px rgba(0, 0, 0, 0.5)) {
+  transition: transform v.$transition-base, box-shadow v.$transition-base;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-$distance);
+    box-shadow: $shadow;
+  }
+}
+
+// Bouton plein aux couleurs StreamFlix
+@mixin button-filled($background, $background-hover) {
+  background-color: $background;
+  border-color: $background;
+  color: v.$text-light;
+  font-weight: v.$font-weight-bold;
+  transition: background-color v.$transition-base, border-color v.$transition-base;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: $background-hover;
+    border-color: $background-hover;
+    color: v.$text-light;
+  }
+}
+
+// Masque un element a l'ecran tout en le laissant lisible par les lecteurs d'ecran
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
