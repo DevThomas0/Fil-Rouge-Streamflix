@@ -109,3 +109,17 @@ modal.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeModal();
 });
+
+// Exercice 6 : bascule du theme sombre / clair
+
+const boutonTheme = document.createElement('button');
+boutonTheme.className = 'btn btn-streamflix-ghost btn-sm ms-lg-2';
+boutonTheme.type = 'button';
+boutonTheme.textContent = 'Mode clair';
+
+boutonTheme.addEventListener('click', () => {
+  const sombre = document.body.classList.toggle('dark-theme');
+  boutonTheme.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+});
+
+document.querySelector('#menu-principal').append(boutonTheme);
