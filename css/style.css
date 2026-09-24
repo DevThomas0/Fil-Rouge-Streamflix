@@ -147,6 +147,76 @@ h3 {
   outline-offset: 2px;
 }
 
+body:not(.dark-theme) {
+  --bs-body-bg: #f5f5f7;
+  --bs-body-color: #1a1a1a;
+  --bs-border-color: #d8d8de;
+  --bs-link-color: #1a1a1a;
+  background-color: #f5f5f7;
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .navbar-streamflix {
+  --bs-navbar-color: #1a1a1a;
+  --bs-navbar-hover-color: #5f5f66;
+  --bs-navbar-active-color: #1a1a1a;
+  --bs-navbar-brand-color: #1a1a1a;
+  --bs-navbar-brand-hover-color: #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: #d8d8de;
+}
+body:not(.dark-theme) .navbar-streamflix .navbar-brand,
+body:not(.dark-theme) .navbar-streamflix .nav-link,
+body:not(.dark-theme) .navbar-streamflix .nav-link.active {
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .navbar-streamflix .nav-link:hover,
+body:not(.dark-theme) .navbar-streamflix .nav-link:focus-visible {
+  color: #5f5f66;
+}
+body:not(.dark-theme) .hero-contenu {
+  color: #ffffff;
+}
+body:not(.dark-theme) .card-film {
+  background-color: #ffffff;
+  border-color: #d8d8de;
+}
+body:not(.dark-theme) .card-film .card-meta {
+  color: #5f5f66;
+}
+body:not(.dark-theme) .form-control {
+  background-color: #ffffff;
+  border-color: #d8d8de;
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .pied {
+  border-top-color: #d8d8de;
+  color: #5f5f66;
+}
+body:not(.dark-theme) .pied h2 {
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .pied a:hover,
+body:not(.dark-theme) .pied a:focus-visible {
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .compteur-films,
+body:not(.dark-theme) .inscription legend,
+body:not(.dark-theme) .inscription .form-label,
+body:not(.dark-theme) .inscription .form-check-label {
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .inscription fieldset {
+  border-color: #d8d8de;
+}
+body:not(.dark-theme) .modal-film-content {
+  background-color: #ffffff;
+  border-color: #d8d8de;
+  color: #1a1a1a;
+}
+body:not(.dark-theme) .close {
+  color: #1a1a1a;
+}
+
 .entete {
   position: sticky;
   top: 0;
@@ -321,6 +391,50 @@ h3 {
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
+}
+
+.modal-film {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-film-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin: 15vh auto 0;
+  padding: 1.5rem;
+  background-color: #221f1f;
+  border: 1px solid #2c2c34;
+  border-radius: 6px;
+  color: #ffffff;
+}
+.modal-film-content h2 {
+  margin-bottom: 1rem;
+  padding-right: 2.5rem;
+}
+.modal-film-content p {
+  color: #999999;
+  font-size: 14px;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.close:hover {
+  color: #e50914;
 }
 
 .navbar-streamflix {

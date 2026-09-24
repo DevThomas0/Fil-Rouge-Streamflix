@@ -13,6 +13,7 @@
 // 3. Base
 @use "base/reset";
 @use "base/typography";
+@use "base/themes";
 
 // 4. Layout
 @use "layout/header";
@@ -22,6 +23,7 @@
 // 5. Composants
 @use "components/buttons";
 @use "components/cards";
+@use "components/modal";
 @use "components/navigation";
 
 // 6. Pages
