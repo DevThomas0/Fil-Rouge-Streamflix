@@ -215,6 +215,11 @@ h3 {
   color: #ffffff;
 }
 
+.compteur-films {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .copyright {
   border-top: 1px solid #2c2c34;
 }

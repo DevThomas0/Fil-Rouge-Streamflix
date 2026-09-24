@@ -19,3 +19,11 @@ document.querySelectorAll('.rangee').forEach((section) => {
 
   titre.after(bouton);
 });
+
+// Exercice 2 : compteur de films
+
+const films = document.querySelectorAll('.card-film');
+const compteur = document.createElement('p');
+compteur.className = 'compteur-films mb-0';
+compteur.textContent = `Catalogue : ${films.length} films disponibles`;
+document.querySelector('.copyright').before(compteur);
