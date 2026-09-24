@@ -362,7 +362,16 @@ h3 {
 }
 
 .rangee h2 {
+  display: inline-block;
   margin-bottom: 1.5rem;
+}
+.rangee .btn-toggle-section {
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
 }
 
 .inscription {
