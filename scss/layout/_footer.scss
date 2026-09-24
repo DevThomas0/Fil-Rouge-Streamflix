@@ -25,6 +25,11 @@
   }
 }
 
+.compteur-films {
+  color: v.$text-light;
+  font-weight: v.$font-weight-bold;
+}
+
 .copyright {
   border-top: 1px solid v.$border-color;
 }
