@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix - Films et séries en streaming</title>
+    <meta name="description" content="StreamFlix, la plateforme de streaming : films, séries et nouveautés en illimité. Découvrez Inception, Interstellar, The Dark Knight et bien d'autres.">
+    <meta name="author" content="StreamFlix">
+    <meta name="keywords" content="streaming, films, séries, VOD, cinéma">
+    <meta property="og:title" content="StreamFlix - Films et séries en streaming">
+    <meta property="og:description" content="Des milliers de films et séries en illimité, partout et sur tous vos écrans.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <a class="lien-evitement" href="#contenu-principal">Aller au contenu principal</a>
+
+    <header class="entete">
+
+        <a class="logo" href="index.html">Stream<span>Flix</span></a>
+
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
+                <li><a href="#films">Films</a></li>
+                <li><a href="#series">Séries</a></li>
+                <li><a href="#ma-liste">Ma Liste</a></li>
+            </ul>
+        </nav>
+
+        <div class="zone-utilisateur">
+
+            <form class="recherche" action="#" method="get" role="search">
+                <label for="recherche">Rechercher un film ou une série</label>
+                <input type="search" id="recherche" name="q" placeholder="Titre, genre, acteur..." minlength="2" required>
+                <button type="submit">Rechercher</button>
+            </form>
+
+            <nav aria-label="Menu du profil">
+                <ul>
+                    <li><a href="#profil">Mon profil</a></li>
+                    <li><a href="#abonnement">Mon abonnement</a></li>
+                    <li><a href="#deconnexion">Se déconnecter</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main id="contenu-principal">
+
+        <h1 class="titre-site">StreamFlix, films et séries en streaming</h1>
+
+        <section class="hero" aria-labelledby="titre-hero">
+
+            <img class="hero-image" src="images/hero-bg.webp" alt="">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-contenu">
+                <h2 id="titre-hero">Inception</h2>
+
+                <p class="hero-meta">
+                    <time datetime="2010">2010</time> ·
+                    <time datetime="PT2H28M">2h28</time> ·
+                    <span>Note : 4.5 sur 5</span> ·
+                    <span>Sci-Fi, Thriller</span>
+                </p>
+
+                <p class="hero-description">
+                    Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets
+                    découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
+                </p>
+
+                <p class="hero-actions">
+                    <a class="bouton bouton-principal" href="#lecture">Lecture</a>
+                    <a class="bouton" href="#infos-inception">Plus d'infos</a>
+                    <a class="bouton" href="#ma-liste">Ma Liste</a>
+                </p>
+            </div>
+
+        </section>
+
+        <section id="films" class="rangee" aria-labelledby="titre-tendances">
+
+            <h2 id="titre-tendances">Tendances actuelles</h2>
+
+            <ul class="grille-films">
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/dark-knight.webp" alt="Affiche du film The Dark Knight">
+                        <h3>The Dark Knight</h3>
+                        <p class="meta">
+                            <time datetime="2008">2008</time> ·
+                            <time datetime="PT2H32M">2h32</time>
+                        </p>
+                        <p class="note">Note : 4.8 sur 5</p>
+                        <p class="genres">Action, Crime, Drama</p>
+                        <a class="bouton" href="#dark-knight">Voir la fiche de The Dark Knight</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/interstellar.jpg" alt="Affiche du film Interstellar">
+                        <h3>Interstellar</h3>
+                        <p class="meta">
+                            <time datetime="2014">2014</time> ·
+                            <time datetime="PT2H49M">2h49</time>
+                        </p>
+                        <p class="note">Note : 4.7 sur 5</p>
+                        <p class="genres">Sci-Fi, Drama</p>
+                        <a class="bouton" href="#interstellar">Voir la fiche d'Interstellar</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/pulp-fiction.jpg" alt="Affiche du film Pulp Fiction">
+                        <h3>Pulp Fiction</h3>
+                        <p class="meta">
+                            <time datetime="1994">1994</time> ·
+                            <time datetime="PT2H34M">2h34</time>
+                        </p>
+                        <p class="note">Note : 4.6 sur 5</p>
+                        <p class="genres">Crime, Drama</p>
+                        <a class="bouton" href="#pulp-fiction">Voir la fiche de Pulp Fiction</a>
+                    </article>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <section id="ma-liste" class="rangee" aria-labelledby="titre-recommandes">
+
+            <h2 id="titre-recommandes">Recommandés pour vous</h2>
+
+            <ul class="grille-films">
+
+                <li>
+                    <article class="film" id="infos-inception">
+                        <img src="images/films/inception.webp" alt="Affiche du film Inception">
+                        <h3>Inception</h3>
+                        <p class="meta">
+                            <time datetime="2010">2010</time> ·
+                            <time datetime="PT2H28M">2h28</time>
+                        </p>
+                        <p class="note">Note : 4.5 sur 5</p>
+                        <p class="genres">Sci-Fi, Thriller</p>
+                        <a class="bouton" href="#inception">Voir la fiche d'Inception</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
+                        <h3>The Matrix</h3>
+                        <p class="meta">
+                            <time datetime="1999">1999</time> ·
+                            <time datetime="PT2H16M">2h16</time>
+                        </p>
+                        <p class="note">Note : 4.5 sur 5</p>
+                        <p class="genres">Action, Sci-Fi</p>
+                        <a class="bouton" href="#matrix">Voir la fiche de The Matrix</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/forrest-gump.jpg" alt="Affiche du film Forrest Gump">
+                        <h3>Forrest Gump</h3>
+                        <p class="meta">
+                            <time datetime="1994">1994</time> ·
+                            <time datetime="PT2H22M">2h22</time>
+                        </p>
+                        <p class="note">Note : 4.4 sur 5</p>
+                        <p class="genres">Drama, Romance</p>
+                        <a class="bouton" href="#forrest-gump">Voir la fiche de Forrest Gump</a>
+                    </article>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <section id="series" class="rangee" aria-labelledby="titre-nouveautes">
+
+            <h2 id="titre-nouveautes">Nouveautés</h2>
+
+            <ul class="grille-films">
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/interstellar.jpg" alt="Affiche du film Interstellar">
+                        <h3>Interstellar</h3>
+                        <p class="meta">
+                            <time datetime="2014">2014</time> ·
+                            <time datetime="PT2H49M">2h49</time>
+                        </p>
+                        <p class="note">Note : 4.7 sur 5</p>
+                        <p class="genres">Sci-Fi, Drama</p>
+                        <a class="bouton" href="#interstellar-nouveaute">Voir la fiche d'Interstellar</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/dark-knight.webp" alt="Affiche du film The Dark Knight">
+                        <h3>The Dark Knight</h3>
+                        <p class="meta">
+                            <time datetime="2008">2008</time> ·
+                            <time datetime="PT2H32M">2h32</time>
+                        </p>
+                        <p class="note">Note : 4.8 sur 5</p>
+                        <p class="genres">Action, Crime, Drama</p>
+                        <a class="bouton" href="#dark-knight-nouveaute">Voir la fiche de The Dark Knight</a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="film">
+                        <img src="images/films/inception.webp" alt="Affiche du film Inception">
+                        <h3>Inception</h3>
+                        <p class="meta">
+                            <time datetime="2010">2010</time> ·
+                            <time datetime="PT2H28M">2h28</time>
+                        </p>
+                        <p class="note">Note : 4.5 sur 5</p>
+                        <p class="genres">Sci-Fi, Thriller</p>
+                        <a class="bouton" href="#inception-nouveaute">Voir la fiche d'Inception</a>
+                    </article>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <section id="inscription" class="inscription" aria-labelledby="titre-inscription">
+
+            <h2 id="titre-inscription">Créer un compte</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Vos informations</legend>
+
+                    <div class="champ">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="champ">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" autocomplete="email"
+                               placeholder="exemple@domaine.com" aria-describedby="aide-email" required>
+                        <span id="aide-email" class="aide">Elle servira d'identifiant de connexion.</span>
+                    </div>
+
+                    <div class="champ">
+                        <label for="mot-de-passe">Mot de passe</label>
+                        <input type="password" id="mot-de-passe" name="mot-de-passe" autocomplete="new-password"
+                               minlength="8" aria-describedby="aide-mdp" required>
+                        <span id="aide-mdp" class="aide">8 caractères minimum.</span>
+                    </div>
+
+                    <div class="champ">
+                        <label for="naissance">Date de naissance</label>
+                        <input type="date" id="naissance" name="naissance" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre formule</legend>
+
+                    <label><input type="radio" name="formule" value="essentiel" checked> Essentiel - 5,99 €/mois</label>
+                    <label><input type="radio" name="formule" value="standard"> Standard - 9,99 €/mois</label>
+                    <label><input type="radio" name="formule" value="premium"> Premium - 15,99 €/mois</label>
+                </fieldset>
+
+                <div class="champ">
+                    <input type="checkbox" id="cgu" name="cgu" required>
+                    <label for="cgu">J'accepte les conditions d'utilisation</label>
+                </div>
+
+                <button type="submit">S'inscrire</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="pied">
+
+        <nav aria-label="Liens utiles">
+            <h2>Liens utiles</h2>
+            <ul>
+                <li><a href="#aide">Aide</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#mentions-legales">Mentions légales</a></li>
+                <li><a href="#conditions">Conditions d'utilisation</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="Réseaux sociaux">
+            <h2>Suivez-nous</h2>
+            <ul>
+                <li><a href="#facebook">Facebook</a></li>
+                <li><a href="#instagram">Instagram</a></li>
+                <li><a href="#x">X</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+            </ul>
+        </nav>
+
+        <p class="copyright">
+            &copy; <time datetime="2026">2026</time> StreamFlix. Tous droits réservés.
+            Site fictif réalisé dans un cadre pédagogique.
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
