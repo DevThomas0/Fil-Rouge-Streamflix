@@ -27,3 +27,12 @@ const compteur = document.createElement('p');
 compteur.className = 'compteur-films mb-0';
 compteur.textContent = `Catalogue : ${films.length} films disponibles`;
 document.querySelector('.copyright').before(compteur);
+
+// Exercice 3 : marquer un film comme vu
+
+films.forEach((film) => {
+  film.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    film.classList.toggle('watched');
+  });
+});

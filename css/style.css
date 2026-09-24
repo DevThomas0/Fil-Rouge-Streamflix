@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --bs-primary: #e50914;
   --bs-primary-rgb: 229, 9, 20;
@@ -303,6 +304,22 @@ h3 {
 .card-film .badge-genre {
   background-color: #564d4d;
   font-size: 0.75rem;
+  font-weight: 700;
+}
+.card-film.watched {
+  position: relative;
+  opacity: 0.6;
+}
+.card-film.watched::after {
+  content: "✓ Vu";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #2ea043;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 700;
 }
 

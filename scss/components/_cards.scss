@@ -40,4 +40,22 @@
     font-size: 0.75rem;
     font-weight: v.$font-weight-bold;
   }
+
+  &.watched {
+    position: relative;
+    opacity: 0.6;
+
+    &::after {
+      content: "✓ Vu";
+      position: absolute;
+      top: v.$spacing-xs;
+      right: v.$spacing-xs;
+      padding: 0.25rem v.$spacing-xs;
+      background-color: v.$success-green;
+      border-radius: v.$border-radius-base;
+      color: v.$text-light;
+      font-size: v.$font-size-small;
+      font-weight: v.$font-weight-bold;
+    }
+  }
 }
