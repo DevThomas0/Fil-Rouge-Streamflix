@@ -7,8 +7,18 @@
 
 .rangee {
   h2 {
+    display: inline-block;
     margin-bottom: v.$spacing-md;
   }
+
+  .btn-toggle-section {
+    margin-left: v.$spacing-sm;
+    vertical-align: middle;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .inscription {
