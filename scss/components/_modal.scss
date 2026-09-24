@@ -1,0 +1,48 @@
+@use "../utils/variables" as v;
+
+.modal-film {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-film-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin: 15vh auto 0;
+  padding: v.$spacing-md;
+  background-color: v.$primary-dark;
+  border: 1px solid v.$border-color;
+  border-radius: v.$border-radius-base;
+  color: v.$text-light;
+
+  h2 {
+    margin-bottom: v.$spacing-sm;
+    padding-right: v.$spacing-lg;
+  }
+
+  p {
+    color: v.$text-muted;
+    font-size: v.$font-size-small;
+  }
+}
+
+.close {
+  position: absolute;
+  top: v.$spacing-xs;
+  right: v.$spacing-sm;
+  padding: 0;
+  background: none;
+  border: none;
+  color: v.$text-light;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    color: v.$primary-red;
+  }
+}
