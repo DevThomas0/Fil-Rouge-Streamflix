@@ -1,0 +1,18 @@
+// =============================================================================
+// Header
+// =============================================================================
+
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+
+  .recherche .form-control {
+    @include m.respond-to("lg") {
+      min-width: 14rem;
+    }
+  }
+}

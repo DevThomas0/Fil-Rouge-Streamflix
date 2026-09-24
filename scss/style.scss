@@ -1,0 +1,28 @@
+// =============================================================================
+// StreamFlix - point d'entree SASS (architecture 7-1)
+// Compilation : npm run sass (ou npm run sass:watch)
+// =============================================================================
+
+// 1. Abstractions
+@use "utils/variables";
+@use "utils/mixins";
+
+// 2. Personnalisation de Bootstrap
+@use "vendors/bootstrap-custom";
+
+// 3. Base
+@use "base/reset";
+@use "base/typography";
+
+// 4. Layout
+@use "layout/header";
+@use "layout/hero";
+@use "layout/footer";
+
+// 5. Composants
+@use "components/buttons";
+@use "components/cards";
+@use "components/navigation";
+
+// 6. Pages
+@use "pages/home";

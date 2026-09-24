@@ -1,0 +1,42 @@
+// =============================================================================
+// Page d'accueil
+// =============================================================================
+
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.rangee {
+  h2 {
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+.inscription {
+  max-width: 40rem;
+
+  fieldset {
+    border: 1px solid v.$border-color;
+    border-radius: v.$border-radius-base;
+  }
+
+  legend {
+    float: none;
+    width: auto;
+    padding: 0 v.$spacing-xs;
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-bold;
+  }
+
+  .form-control:user-invalid {
+    border-color: v.$primary-red;
+  }
+
+  .form-control:user-valid {
+    border-color: v.$success-green;
+  }
+
+  .aide {
+    color: v.$text-muted;
+    font-size: v.$font-size-small;
+  }
+}

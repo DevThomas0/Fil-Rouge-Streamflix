@@ -1,0 +1,43 @@
+// =============================================================================
+// Cartes de films - surcouche du composant .card de Bootstrap
+// =============================================================================
+
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.card-film {
+  @include m.hover-lift;
+
+  height: 100%;
+  background-color: v.$primary-dark;
+  border: 1px solid v.$border-color;
+  border-radius: v.$border-radius-base;
+  overflow: hidden;
+
+  .card-img-top {
+    width: 100%;
+    aspect-ratio: v.$poster-ratio;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: v.$font-size-base;
+  }
+
+  .card-meta {
+    color: v.$text-muted;
+    font-size: v.$font-size-small;
+  }
+
+  .card-note {
+    color: v.$primary-red;
+    font-size: v.$font-size-small;
+    font-weight: v.$font-weight-bold;
+  }
+
+  .badge-genre {
+    background-color: v.$secondary-gray;
+    font-size: 0.75rem;
+    font-weight: v.$font-weight-bold;
+  }
+}
