@@ -396,6 +396,10 @@ h3 {
   display: none;
 }
 
+.message-vide {
+  color: #999999;
+}
+
 .inscription {
   max-width: 40rem;
 }

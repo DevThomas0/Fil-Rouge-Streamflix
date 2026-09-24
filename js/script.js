@@ -36,3 +36,32 @@ films.forEach((film) => {
     film.classList.toggle('watched');
   });
 });
+
+// Exercice 4 : recherche et filtrage des films
+
+const champRecherche = document.querySelector('#recherche');
+const formulaireRecherche = document.querySelector('.recherche');
+
+const messageVide = document.createElement('p');
+messageVide.className = 'message-vide container hidden';
+messageVide.textContent = 'Aucun résultat';
+document.querySelector('#films').before(messageVide);
+
+champRecherche.addEventListener('input', function () {
+  const terme = this.value.trim().toLowerCase();
+  let trouves = 0;
+
+  films.forEach((film) => {
+    const titre = film.querySelector('h3').textContent.toLowerCase();
+    const correspond = titre.includes(terme);
+
+    film.closest('li').style.display = correspond ? '' : 'none';
+    if (correspond) trouves += 1;
+  });
+
+  messageVide.classList.toggle('hidden', trouves > 0);
+});
+
+formulaireRecherche.addEventListener('submit', (event) => {
+  event.preventDefault();
+});
