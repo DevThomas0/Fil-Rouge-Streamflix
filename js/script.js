@@ -39,7 +39,7 @@ films.forEach((film) => {
 
 // Exercice 4 : recherche et filtrage des films
 
-const champRecherche = document.querySelector('#recherche');
+const champRecherche = document.querySelector('#search');
 const formulaireRecherche = document.querySelector('.recherche');
 
 const messageVide = document.createElement('p');
@@ -71,32 +71,63 @@ formulaireRecherche.addEventListener('submit', (event) => {
 const modal = document.querySelector('#modal');
 const modalBody = document.querySelector('#modal-body');
 
-function openModal(film) {
-  const titre = film.querySelector('h3').textContent;
-  const meta = film.querySelector('.card-meta').textContent.replace(/\s+/g, ' ').trim();
-  const note = film.querySelector('.card-note').textContent;
-  const genres = [...film.querySelectorAll('.badge-genre')].map((b) => b.textContent);
-
+function openModal({ titre, meta, genres, description }) {
   modalBody.replaceChildren();
+
   const h2 = document.createElement('h2');
+  h2.id = 'titre-modal';
   h2.textContent = titre;
+
   const infos = document.createElement('p');
-  infos.textContent = `${meta} · ${note}`;
+  infos.textContent = meta;
+
   const listeGenres = document.createElement('p');
   listeGenres.textContent = genres.join(', ');
 
   modalBody.append(h2, infos, listeGenres);
+
+  if (description) {
+    const resume = document.createElement('p');
+    resume.textContent = description;
+    modalBody.append(resume);
+  }
+
   modal.style.display = 'block';
+  modal.querySelector('.close').focus();
 }
 
 function closeModal() {
   modal.style.display = 'none';
 }
 
+function texteNormalise(element) {
+  return element.textContent.replace(/\s+/g, ' ').trim();
+}
+
+function infosDepuisCarte(film) {
+  return {
+    titre: film.querySelector('h3').textContent,
+    meta: `${texteNormalise(film.querySelector('.card-meta'))} · ${film.querySelector('.card-note').textContent}`,
+    genres: [...film.querySelectorAll('.badge-genre')].map((b) => b.textContent),
+  };
+}
+
 films.forEach((film) => {
   film.querySelector('a.btn').addEventListener('click', (event) => {
     event.preventDefault();
-    openModal(film);
+    openModal(infosDepuisCarte(film));
+  });
+});
+
+// Le film vedette ouvre la meme modal que les cartes du catalogue
+const hero = document.querySelector('.hero');
+
+document.querySelector('#hero-infos').addEventListener('click', () => {
+  openModal({
+    titre: hero.querySelector('#titre-hero').textContent,
+    meta: texteNormalise(hero.querySelector('.hero-meta')),
+    genres: [...hero.querySelectorAll('.badge-genre')].map((b) => b.textContent),
+    description: texteNormalise(hero.querySelector('.hero-description')),
   });
 });
 
@@ -109,3 +140,17 @@ modal.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeModal();
 });
+
+// Exercice 6 : bascule du theme sombre / clair
+
+const boutonTheme = document.createElement('button');
+boutonTheme.className = 'btn btn-streamflix-ghost btn-sm ms-lg-2';
+boutonTheme.type = 'button';
+boutonTheme.textContent = 'Mode clair';
+
+boutonTheme.addEventListener('click', () => {
+  const sombre = document.body.classList.toggle('dark-theme');
+  boutonTheme.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+});
+
+document.querySelector('#menu-principal').append(boutonTheme);
