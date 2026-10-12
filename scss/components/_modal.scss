@@ -1,8 +1,6 @@
 @use "../utils/variables" as v;
 
-// La modal maison porte les classes attendues par les consignes (.modal,
-// .modal-content, .close). Chargee apres Bootstrap, elle neutralise les regles
-// du framework pour les proprietes qu'elle redefinit.
+// Chargee apres Bootstrap, cette modal neutralise les regles .modal du framework.
 .modal {
   display: none;
   position: fixed;

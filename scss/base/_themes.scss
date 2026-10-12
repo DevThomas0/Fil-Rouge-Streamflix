@@ -6,13 +6,11 @@ $light-border: #d8d8de;
 $light-text: #1a1a1a;
 $light-text-muted: #5f5f66;
 
-// Theme sombre : applique par defaut sur le <body>
 .dark-theme {
   background-color: v.$background-dark;
   color: v.$text-light;
 }
 
-// Theme clair : affiche des que la classe .dark-theme est retiree par le script
 body:not(.dark-theme) {
   --bs-body-bg: #{$light-bg};
   --bs-body-color: #{$light-text};
@@ -44,7 +42,6 @@ body:not(.dark-theme) {
     }
   }
 
-  // Le hero reste sur fond photo : son texte garde le contraste clair
   .hero-contenu {
     color: v.$text-light;
   }

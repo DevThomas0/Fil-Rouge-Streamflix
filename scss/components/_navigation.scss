@@ -1,12 +1,7 @@
-// =============================================================================
-// Navigation - surcouche du composant .navbar de Bootstrap
-// =============================================================================
-
 @use "../utils/variables" as v;
 @use "../utils/mixins" as m;
 
 .navbar-streamflix {
-  // Variables de navbar Bootstrap alignees sur la charte StreamFlix
   --bs-navbar-color: #{v.$text-light};
   --bs-navbar-hover-color: #{v.$text-muted};
   --bs-navbar-active-color: #{v.$text-light};
@@ -15,7 +10,7 @@
   --bs-navbar-toggler-border-color: #{v.$border-color};
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 
-  background-color: rgba(11, 11, 15, 0.95);
+  background-color: rgba(v.$background-dark, 0.95);
   border-bottom: 1px solid v.$border-color;
 
   .navbar-brand {
@@ -62,7 +57,7 @@
     border-color: v.$border-color;
 
     &:focus {
-      box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+      box-shadow: 0 0 0 0.25rem rgba(v.$primary-red, 0.25);
     }
   }
 }
