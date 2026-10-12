@@ -39,7 +39,7 @@ films.forEach((film) => {
 
 // Exercice 4 : recherche et filtrage des films
 
-const champRecherche = document.querySelector('#recherche');
+const champRecherche = document.querySelector('#search');
 const formulaireRecherche = document.querySelector('.recherche');
 
 const messageVide = document.createElement('p');
