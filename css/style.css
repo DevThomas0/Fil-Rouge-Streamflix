@@ -6,7 +6,7 @@
   --bs-secondary-rgb: 86, 77, 77;
   --bs-info: #0071eb;
   --bs-info-rgb: 0, 113, 235;
-  --bs-body-bg: #0b0b0f;
+  --bs-body-bg: #141414;
   --bs-body-color: #ffffff;
   --bs-secondary-color: #999999;
   --bs-border-color: #2c2c34;
@@ -142,6 +142,11 @@ h3 {
   outline-offset: 2px;
 }
 
+.dark-theme {
+  background-color: #141414;
+  color: #ffffff;
+}
+
 body:not(.dark-theme) {
   --bs-body-bg: #f5f5f7;
   --bs-body-color: #1a1a1a;
@@ -247,7 +252,7 @@ body:not(.dark-theme) .close {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #0b0b0f 0%, rgba(11, 11, 15, 0.7) 50%, rgba(11, 11, 15, 0.25) 100%);
+  background: linear-gradient(to top, #141414 0%, rgba(11, 11, 15, 0.7) 50%, rgba(11, 11, 15, 0.25) 100%);
 }
 
 .hero-contenu {
