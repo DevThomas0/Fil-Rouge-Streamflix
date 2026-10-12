@@ -100,8 +100,7 @@
 
                 <p class="hero-actions d-flex flex-wrap gap-2 mt-4 mb-0">
                     <a class="btn btn-streamflix" href="#lecture">Lecture</a>
-                    <button class="btn btn-streamflix-ghost" type="button"
-                            data-bs-toggle="modal" data-bs-target="#modal-inception">Plus d'infos</button>
+                    <button class="btn btn-streamflix-ghost" type="button" id="hero-infos">Plus d'infos</button>
                     <a class="btn btn-streamflix-ghost" href="#ma-liste">Ma Liste</a>
                 </p>
             </div>
@@ -410,38 +409,10 @@
 
     </footer>
 
-    <div id="modal" class="modal-film">
-        <div class="modal-film-content">
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="titre-modal">
+        <div class="modal-content">
             <button class="close" type="button" aria-label="Fermer">&times;</button>
             <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-inception" tabindex="-1" aria-labelledby="titre-modal-inception" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="titre-modal-inception">Inception (2010)</h2>
-                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="hero-meta">
-                        <time datetime="PT2H28M">2h28</time> · Note : 4.5 sur 5
-                    </p>
-                    <p>
-                        Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets
-                        découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
-                    </p>
-                    <p class="mb-0">
-                        <span class="badge badge-genre text-bg-secondary">Sci-Fi</span>
-                        <span class="badge badge-genre text-bg-secondary">Thriller</span>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-streamflix-ghost" type="button" data-bs-dismiss="modal">Fermer</button>
-                    <a class="btn btn-streamflix" href="#lecture">Lecture</a>
-                </div>
-            </div>
         </div>
     </div>
 

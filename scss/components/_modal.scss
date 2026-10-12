@@ -1,6 +1,9 @@
 @use "../utils/variables" as v;
 
-.modal-film {
+// La modal maison porte les classes attendues par les consignes (.modal,
+// .modal-content, .close). Chargee apres Bootstrap, elle neutralise les regles
+// du framework pour les proprietes qu'elle redefinit.
+.modal {
   display: none;
   position: fixed;
   inset: 0;
@@ -8,7 +11,8 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-film-content {
+.modal-content {
+  display: block;
   position: relative;
   width: 80%;
   max-width: 500px;

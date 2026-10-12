@@ -61,11 +61,6 @@
   border-color: #e50914;
 }
 
-.modal-content {
-  background-color: #221f1f;
-  border: 1px solid #2c2c34;
-}
-
 *,
 *::before,
 *::after {
@@ -208,7 +203,7 @@ body:not(.dark-theme) .inscription .form-check-label {
 body:not(.dark-theme) .inscription fieldset {
   border-color: #d8d8de;
 }
-body:not(.dark-theme) .modal-film-content {
+body:not(.dark-theme) .modal-content {
   background-color: #ffffff;
   border-color: #d8d8de;
   color: #1a1a1a;
@@ -393,7 +388,7 @@ body:not(.dark-theme) .close {
   font-weight: 700;
 }
 
-.modal-film {
+.modal {
   display: none;
   position: fixed;
   inset: 0;
@@ -401,7 +396,8 @@ body:not(.dark-theme) .close {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-film-content {
+.modal-content {
+  display: block;
   position: relative;
   width: 80%;
   max-width: 500px;
@@ -412,11 +408,11 @@ body:not(.dark-theme) .close {
   border-radius: 6px;
   color: #ffffff;
 }
-.modal-film-content h2 {
+.modal-content h2 {
   margin-bottom: 1rem;
   padding-right: 2.5rem;
 }
-.modal-film-content p {
+.modal-content p {
   color: #999999;
   font-size: 14px;
 }
