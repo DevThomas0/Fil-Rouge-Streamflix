@@ -107,10 +107,6 @@ h3 {
   font-size: 16px;
 }
 
-.text-small {
-  font-size: 14px;
-}
-
 .titre-site {
   position: absolute;
   width: 1px;
@@ -252,7 +248,7 @@ body:not(.dark-theme) .close {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #141414 0%, rgba(11, 11, 15, 0.7) 50%, rgba(11, 11, 15, 0.25) 100%);
+  background: linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0.7) 50%, rgba(20, 20, 20, 0.25) 100%);
 }
 
 .hero-contenu {
@@ -446,7 +442,7 @@ body:not(.dark-theme) .close {
   --bs-navbar-brand-hover-color: #ffffff;
   --bs-navbar-toggler-border-color: #2c2c34;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  background-color: rgba(11, 11, 15, 0.95);
+  background-color: rgba(20, 20, 20, 0.95);
   border-bottom: 1px solid #2c2c34;
 }
 .navbar-streamflix .navbar-brand {
